@@ -1,0 +1,13 @@
+@import "@fontsource/roboto";
+
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: $baseColor;
+    height: 100vh;
+    color: white;
+}
+
+.hide-scrollbar::-webkit-scrollbar{
+    display: none;
+}

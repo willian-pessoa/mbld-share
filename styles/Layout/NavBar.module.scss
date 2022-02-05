@@ -1,0 +1,58 @@
+.container{
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    .navUser{
+        width: 100%;
+        flex: 1;
+        background-color: $overlay800;
+
+        ul{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            align-items: center;
+            list-style: none;
+
+            li{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .navBar{
+        width: 100%;
+        flex: 2;
+        background: $overlay000;
+        color: black;
+
+        ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            height: 100%;
+            align-items: center;
+        }
+
+        li{
+            height: 100%;
+            width: 100%;
+            font-size: 1.5em;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    }
+}
