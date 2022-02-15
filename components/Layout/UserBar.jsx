@@ -11,24 +11,27 @@ const SPACE = ["", "", "", "", ""];
 
 export default function UserBar() {
   const [isLoged, setIsLoged] = useState(false);
-  const [logedBar] = useState([
-    {
-      name: "Profile",
-      path: "/profile/1",
-      icon: <CgProfile />,
-    },
-    {
-      name: "Attempts",
-      path: "/profile/1/attemptsUser",
-      icon: <BiBarChartAlt2 />,
-    },
-  ]);
+  const [id, setId] = useState("1")
+  const [logedBar, setLogedBar] = useState([])
 
   useEffect(()=>{
     if (localStorage.getItem("user") === null){
         setIsLoged(false);
     } else {
         setIsLoged(true);
+        let id = JSON.parse(localStorage.getItem("user")).googleId;
+        setLogedBar([
+          {
+            name: "Profile",
+            path: `/profile/${id}`,
+            icon: <CgProfile />,
+          },
+          {
+            name: "Attempts",
+            path: `/profile/${id}/attemptsUser`,
+            icon: <BiBarChartAlt2 />,
+          },
+        ])
     }
   },[])
 

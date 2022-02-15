@@ -7,6 +7,9 @@ import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
-      <h1>Welcome</h1>
+    <div className={styles.home}>
+      <h1>Welcome to the MBLD SHARE</h1>
+
+    </div>
   )
 }

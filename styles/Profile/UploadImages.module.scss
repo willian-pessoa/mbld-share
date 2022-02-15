@@ -1,0 +1,39 @@
+.uploadContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid $overlay600;
+    width: 250px;
+    height: 200px;
+    position: relative;
+
+    .image{
+        width: 200px;
+        height: 200px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input{
+
+        label {
+            padding: 2px;
+            width: 200px;
+            background-color: $overlay600;
+            color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+    }
+}

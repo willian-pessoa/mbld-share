@@ -1,0 +1,155 @@
+.ShareMBLD{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .topContainer{
+        display: flex;
+
+        .leftTopContainer{
+            display: flex;
+            flex-direction: column;
+
+            label{
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                border: 2px solid $overlay600;
+                align-items: center;
+                justify-content: center;
+                margin: 5px;                
+            }
+
+            input{
+                width: 90%;
+            }
+        }
+
+        .rightTopContainer{
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .title{
+                width: 95%;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                border: 2px solid $overlay600;
+                align-items: center;
+                justify-content: center;
+                margin: 5px;
+                padding: 2px; 
+                
+                input{
+                    width: 95%;
+                }
+
+            }
+
+            .cubesInfos{
+                width: 350px;
+                display: flex;
+
+                    label{
+                        border-radius: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        border: 2px solid $overlay600;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 5px;
+                        padding: 2px;
+                    }
+
+                    input{
+                        width: 50%;
+                        text-align: center;
+                    }
+                
+            }
+
+            .timeInfos{
+                width: 350px;
+                display: flex;
+
+                label{
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    border: 2px solid $overlay600;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 5px;
+                    padding: 2px;
+                }
+
+                input{
+                    width: 75%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .bottomContainer{
+        width:100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid $overlay600;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+        padding: 2px;     
+        
+        textarea{
+            resize: none;
+            width: 90%;
+            height: 50px;
+        }
+    }
+
+    label{
+        margin-top: 5px;
+        text-align: left;
+        font: 1.2em;
+    }
+
+    input{
+        font-size: 1.2em;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    button{
+        margin-top: 5px;
+        cursor: pointer;
+        padding: 5px;
+        font-size: large;
+        width: 30%;
+        align-self: center;
+        border-radius: 10px;
+        border: none;
+        background-color: $overlay600;
+        color: white;
+    }
+
+    button:hover{
+        background: white;
+        color: $overlay900;
+    }
+}
+
+

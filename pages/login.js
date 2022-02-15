@@ -20,6 +20,7 @@ export default function Login() {
             _type: "user",
             userName: name,
             image: imageUrl,
+            country: "",
         }
 
         client.createIfNotExists(doc)
