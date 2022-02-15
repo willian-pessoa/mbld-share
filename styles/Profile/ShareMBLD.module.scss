@@ -23,6 +23,7 @@
 
             input{
                 width: 90%;
+                margin-bottom: 4px;
             }
         }
 
@@ -92,6 +93,29 @@
                     text-align: center;
                 }
             }
+
+            .tooltipContainer{
+                margin: 0;
+                margin-top: 10px;
+                padding: 5px;
+                border: 2px solid $overlay600;
+                border-radius: 10px;
+
+                p{
+                    margin: 0;
+                    cursor: pointer;
+                }
+
+                .tooltip{
+                    font-size: 1.2em;
+                    background-color: $baseColor;
+                    opacity: 1;
+                    border-radius: 10px;
+                    padding: 40px;
+                    border: 2px solid $overlay600;
+                    border-radius: 10px;
+                }
+            }
         }
     }
 
@@ -107,9 +131,37 @@
         padding: 2px;     
         
         textarea{
+            margin-bottom: 5px;
             resize: none;
             width: 90%;
             height: 50px;
+            font-size: 1.2em;
+            font-family: "Roboto";
+        }
+    }
+
+    .sendContainer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            margin-top: 5px;
+            cursor: pointer;
+            padding: 5px;
+            font-size: large;
+            width: 30%;
+            align-self: center;
+            border-radius: 10px;
+            border: none;
+            background-color: $overlay600;
+            color: white;
+        }
+    
+        button:hover{
+            background: white;
+            color: $overlay900;
         }
     }
 
@@ -131,24 +183,6 @@
 
     input[type=number] {
         -moz-appearance: textfield;
-    }
-
-    button{
-        margin-top: 5px;
-        cursor: pointer;
-        padding: 5px;
-        font-size: large;
-        width: 30%;
-        align-self: center;
-        border-radius: 10px;
-        border: none;
-        background-color: $overlay600;
-        color: white;
-    }
-
-    button:hover{
-        background: white;
-        color: $overlay900;
     }
 }
 

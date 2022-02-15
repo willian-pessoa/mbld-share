@@ -6,11 +6,14 @@ import Router from "next/router";
 
 import { client } from "../functions/client.js";
 
+import { Oval } from "react-loader-spinner";
+import ReactTooltip from "react-tooltip";
+
 // helpers
 import { isFormatTime } from "../functions/isFormatTime.js";
 import { timeToString } from "../functions/timeToString.js";
 
-export default function ShareMBLD({ id, isLoading, setIsLoading }) {
+export default function ShareMBLD({ id }) {
   // data to send
   const [imageAsset, setImageAsset] = useState(null);
   const [imageURL, setImageURL] = useState("/assets/defaultUpload.png");
@@ -29,8 +32,9 @@ export default function ShareMBLD({ id, isLoading, setIsLoading }) {
   const [tempExec, setTempExec] = useState("");
   const [tempTime, setTempTime] = useState("");
 
-  // button text
+  // button text and loading send
   const [textBtn, setTextBtn] = useState("SHARE");
+  const [isSending, setIsSending] = useState(false);
 
   // input title, url, number cubes and cubes right
   const handleUrlVideo = (url) => {
@@ -105,7 +109,7 @@ export default function ShareMBLD({ id, isLoading, setIsLoading }) {
 
   // SHARE BUTTON
   const handleShare = () => {
-    setIsLoading(true);
+    setIsSending(true);
 
     const doc = {
       _type: "pin",
@@ -132,18 +136,24 @@ export default function ShareMBLD({ id, isLoading, setIsLoading }) {
       },
     };
 
-    if (time === 0 || title === "" || numberCubes === "" || rightCubes === "") {
-      setTextBtn("TRY AGAIN");
-      setIsLoading(false);
+    if (
+      imageAsset === null ||
+      time === 0 ||
+      title === "" ||
+      numberCubes === "" ||
+      rightCubes === ""
+    ) {
+      setTimeout(() => {
+        setTextBtn("TRY AGAIN");
+        setIsSending(false);
+      }, 700);
       return;
     }
 
     client.create(doc).then(() => {
-      setIsLoading(false);
+      setIsSending(false);
       Router.push(`/profile/${id}/attemptsUser`);
     });
-
-    setIsLoading(false);
   };
 
   return (
@@ -185,6 +195,7 @@ export default function ShareMBLD({ id, isLoading, setIsLoading }) {
                 value={numberCubes}
                 id="amount"
                 type="number"
+                placeholder="2"
               />
             </label>
             <label>
@@ -194,6 +205,7 @@ export default function ShareMBLD({ id, isLoading, setIsLoading }) {
                 value={rightCubes}
                 id="right"
                 type="number"
+                placeholder="2"
               />
             </label>
             <label>
@@ -214,6 +226,7 @@ export default function ShareMBLD({ id, isLoading, setIsLoading }) {
                 value={tempMemo}
                 id="memo"
                 type="text"
+                placeholder="00:00"
               />
             </label>
             <label>
@@ -223,6 +236,7 @@ export default function ShareMBLD({ id, isLoading, setIsLoading }) {
                 value={tempExec}
                 id="exec"
                 type="text"
+                placeholder="00:00"
               />
             </label>
             <label>
@@ -235,13 +249,25 @@ export default function ShareMBLD({ id, isLoading, setIsLoading }) {
               />
             </label>
           </div>
+          <div className={styles.tooltipContainer}>
+            <p data-tip data-for="formatTime">
+              Format Times Allowed
+            </p>
+            <ReactTooltip multiline className={styles.tooltip} id="formatTime" place="top" effect="solid">
+              The Format times Allowed are <br/> <br/> 00:00:00 and 00:00 
+            </ReactTooltip>
+          </div>
         </div>
       </div>
       <div className={styles.bottomContainer}>
         Notes
-        <textarea onChange={(e) => handleNotes(e.target.value)} value={note} />
+        <textarea placeholder="Write your good and bad thoughts about the attempt..." onChange={(e) => handleNotes(e.target.value)} value={note} />
       </div>
-      <button onClick={() => handleShare()}>{textBtn}</button>
+      <div className={styles.sendContainer}>
+        <button onClick={() => handleShare()}>{textBtn}</button>
+        &nbsp;
+        {isSending ? <Oval color="#00BFFF" height={40} width={40} /> : ""}
+      </div>
     </div>
   );
 }
