@@ -1,17 +1,17 @@
 import React, { memo } from "react";
 import { useState, useEffect } from "react";
 import UploadImages from "./UploadImages";
-import styles from "../styles/Profile/ShareMBLD.module.scss";
+import styles from "../../styles/Profile/ShareMBLD.module.scss";
 import Router from "next/router";
 
-import { client } from "../functions/client.js";
+import { client } from "../../functions/client.js";
 
 import { Oval } from "react-loader-spinner";
 import ReactTooltip from "react-tooltip";
 
 // helpers
-import { isFormatTime } from "../functions/isFormatTime.js";
-import { timeToString } from "../functions/timeToString.js";
+import { isFormatTime } from "../../functions/isFormatTime.js";
+import { timeToString } from "../../functions/timeToString.js";
 
 export default function ShareMBLD({ id }) {
   // data to send
@@ -69,29 +69,20 @@ export default function ShareMBLD({ id }) {
   // times input
   const handleTotalTime = (time) => {
     setTempTime(time);
-    let isFormat = isFormatTime(time)[0];
     let timeInSecs = isFormatTime(time)[1];
-    if (isFormat) {
-      setTime(timeInSecs);
-    }
+    setTime(timeInSecs);
   };
 
   const handleMemoTime = (time) => {
     setTempMemo(time);
-    let isFormat = isFormatTime(time)[0];
     let timeInSecs = isFormatTime(time)[1];
-    if (isFormat) {
-      setMemorization(timeInSecs);
-    }
+    setMemorization(timeInSecs);
   };
 
   const handleExecTime = (time) => {
     setTempExec(time);
-    let isFormat = isFormatTime(time)[0];
     let timeInSecs = isFormatTime(time)[1];
-    if (isFormat) {
-      setExecution(timeInSecs);
-    }
+    setExecution(timeInSecs);
   };
 
   // auto compute time input
@@ -138,7 +129,7 @@ export default function ShareMBLD({ id }) {
 
     if (
       imageAsset === null ||
-      time === 0 ||
+      time <= 0 ||
       title === "" ||
       numberCubes === "" ||
       rightCubes === ""
@@ -253,15 +244,25 @@ export default function ShareMBLD({ id }) {
             <p data-tip data-for="formatTime">
               Format Times Allowed
             </p>
-            <ReactTooltip multiline className={styles.tooltip} id="formatTime" place="top" effect="solid">
-              The Format times Allowed are <br/> <br/> 00:00:00 and 00:00 
+            <ReactTooltip
+              multiline
+              className={styles.tooltip}
+              id="formatTime"
+              place="top"
+              effect="solid"
+            >
+              The Format times Allowed are <br /> <br /> 00:00:00 and 00:00
             </ReactTooltip>
           </div>
         </div>
       </div>
       <div className={styles.bottomContainer}>
         Notes
-        <textarea placeholder="Write your good and bad thoughts about the attempt..." onChange={(e) => handleNotes(e.target.value)} value={note} />
+        <textarea
+          placeholder="Write your good and bad thoughts about the attempt..."
+          onChange={(e) => handleNotes(e.target.value)}
+          value={note}
+        />
       </div>
       <div className={styles.sendContainer}>
         <button onClick={() => handleShare()}>{textBtn}</button>

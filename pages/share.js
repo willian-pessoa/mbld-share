@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import ShareMBLD from '../components/ShareMBLD.jsx';
+import ShareMBLD from '../components/Profile/ShareMBLD.jsx';
 import Router from 'next/router'
 
 //helpers

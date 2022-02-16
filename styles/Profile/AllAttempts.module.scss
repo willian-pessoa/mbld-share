@@ -1,0 +1,53 @@
+.allAttempts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h5{
+        margin: 5px;
+        margin-bottom: 15px;
+        font-weight: lighter;
+    }
+
+    .styledTable{
+        border-collapse: collapse;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        
+        thead{
+            tr{
+                background-color: $overlay000;
+                color: $baseColor;
+                text-align: center
+            }
+            th{
+                padding: 5px;
+                cursor: pointer;
+            }
+        }
+
+        tbody{
+            tr{
+                background-color: $overlay800;
+                color: white;
+                text-align: center;
+                border: 1px solid $overlay000;
+            }
+            td{
+                padding: 6px;
+            }
+            td:nth-child(2n+3){
+                border-right: 1px solid;
+            }
+            tr:hover{
+                background-color: $overlay000;
+                color: $baseColor;
+                text-align: center;
+                td{
+                    border: none;
+                }
+            }
+        }
+    }
+}

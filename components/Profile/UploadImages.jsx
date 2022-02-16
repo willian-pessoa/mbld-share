@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
-import styles from "../styles/Profile/UploadImages.module.scss";
+import styles from "../../styles/Profile/UploadImages.module.scss";
 
-import { client } from "../functions/client";
+import { client } from "../../functions/client";
 
 import { Oval } from "react-loader-spinner";
 
