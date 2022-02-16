@@ -88,6 +88,36 @@ export default function AllAttempts({ id }) {
         } else {
           setFilter(prev=>({title: toFilter, order:"pontuation", sort:"asc"}))
         }
+      case "Memorization":
+        if(filter.sort === "asc"){
+          setFilter(prev=>({title: toFilter, order:"memo_time", sort:"desc"}))
+        } else {
+          setFilter(prev=>({title: toFilter, order:"memo_time", sort:"asc"}))
+        }
+      case "Execution":
+        if(filter.sort === "asc"){
+          setFilter(prev=>({title: toFilter, order:"exec_time", sort:"desc"}))
+        } else {
+          setFilter(prev=>({title: toFilter, order:"exec_time", sort:"asc"}))
+        }
+      case "Time":
+        if(filter.sort === "asc"){
+          setFilter(prev=>({title: toFilter, order:"time", sort:"desc"}))
+        } else {
+          setFilter(prev=>({title: toFilter, order:"time", sort:"asc"}))
+        }
+      case "Nº Cubes":
+        if(filter.sort === "asc"){
+          setFilter(prev=>({title: toFilter, order:"number_cubes", sort:"desc"}))
+        } else {
+          setFilter(prev=>({title: toFilter, order:"number_cubes", sort:"asc"}))
+        }
+      case "Nº Right":
+        if(filter.sort === "asc"){
+          setFilter(prev=>({title: toFilter, order:"right_cubes", sort:"desc"}))
+        } else {
+          setFilter(prev=>({title: toFilter, order:"right_cubes", sort:"asc"}))
+        }
     }
   };
 
@@ -113,7 +143,7 @@ export default function AllAttempts({ id }) {
                       key={index}
                     >
                       {item}
-                      {showArrow && filter.title === item ? filter.sort === "desc" ? <AiFillCaretDown/> : <AiFillCaretUp/> : ""}
+                      {showArrow && filter.title === item ? filter.sort === "desc" ? <AiFillCaretDown style={{color: "#455A64"}}/> : <AiFillCaretUp style={{color: "#455A64"}}/> : ""}
                     </th>
                   );
                 })}
