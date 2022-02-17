@@ -305,6 +305,10 @@ export default function AllAttempts({ id }) {
     }
   };
 
+  const handlePageRedirect = (idPage) => {
+    Router.push(`/attempts/${idPage}`)
+  }
+
   return (
     <div className={styles.allAttempts}>
       <h2>All Attempts</h2>
@@ -341,7 +345,7 @@ export default function AllAttempts({ id }) {
             <tbody>
               {attempts.map((item, index) => {
                 return (
-                  <tr key={index}>
+                  <tr onClick={()=>handlePageRedirect(item.id_try)} key={index}>
                     {Object.keys(item).map((key, index) => {
                       return (
                         <td key={index}>
