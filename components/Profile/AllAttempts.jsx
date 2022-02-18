@@ -68,14 +68,12 @@ export default function AllAttempts({ id }) {
 
   const handleDelete = (id) => {
     setIsLoading(true);
-    console.log(id);
     client
       .delete(id)
       .then(() => {
         console.log("Attempt deleted");
         setTimeout(() => {
           setIsLoading(false);
-          Router.reload(window.location.pathname);
         }, 5000);
       })
       .catch((err) => {
@@ -305,8 +303,12 @@ export default function AllAttempts({ id }) {
     }
   };
 
-  const handlePageRedirect = (idPage) => {
-    Router.push(`/attempts/${idPage}`)
+  const handlePageRedirect = (idPage, key) => {
+    if(key === "id_try"){
+      return
+    } else {
+      Router.push(`/attempts/${idPage}`)
+    }
   }
 
   return (
@@ -345,14 +347,14 @@ export default function AllAttempts({ id }) {
             <tbody>
               {attempts.map((item, index) => {
                 return (
-                  <tr onClick={()=>handlePageRedirect(item.id_try)} key={index}>
+                  <tr  key={index}>
                     {Object.keys(item).map((key, index) => {
                       return (
-                        <td key={index}>
+                        <td key={index} onClick={()=>handlePageRedirect(item.id_try, key)}>
                           {key === "id_try" ? (
                             <AiFillDelete
                               onClick={() => handleDelete(item[key])}
-                              style={{ cursor: "pointer" }}
+                              style={{ cursor: "pointer", zIndex:"10"}}
                             />
                           ) : (
                             item[key]

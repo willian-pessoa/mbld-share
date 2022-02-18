@@ -22,7 +22,9 @@ export default function AttemptPage() {
             time, 
             note, _id, 
             "imageUrl": image.asset->url,
+            "imageDimensions": image.asset->metadata.dimensions,
             video,
+            title,
           }`;
     client
       .fetch(query)

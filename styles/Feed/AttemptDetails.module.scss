@@ -1,6 +1,111 @@
 .attemptDetails{
     height: calc(100vh - 80px);
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .containerTop{
+        width: 90%;
+        max-width: 900px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: $overlay900;
+        border: 2px solid $overlay800;
+        border-radius: 8px;
+        padding: 5px 2px;
+
+        .containerTop_left{
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;        
+
+            .image{
+                position: relative;
+
+                img{
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .containerTop_right{
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2{
+                margin: 20px 0;
+                padding: 10px 25px;
+                background-color: $overlay800;
+                border: 2px solid $overlay600;
+                border-radius: 8px;
+                text-align: center;
+                text-transform: capitalize;
+
+                span{
+                    font-weight: 400;
+                }
+            }
+
+            .containerTimes{
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                .timesInfo{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    .timeContainer{
+                        margin: 10px 0px;
+                        width: 80%;
+                        height: 25%;
+                        background-color: $overlay800;
+                        border: 2px solid $overlay600;
+                        border-radius: 8px;
+                        text-align: center;
+                        
+                        p{
+                            word-wrap: break-word;
+                            padding: 1px 0;
+                            margin: 0;
+                            font-size: 1.1em;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+
+            .numberCubes{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                .amountContainer{
+                    width: 30%;
+                    height: 25%;
+                    background-color: $overlay800;
+                    border: 2px solid $overlay600;
+                    border-radius: 8px;
+                    text-align: center;
+                
+                    p{
+                        word-wrap: break-word;
+                        padding: 1px 0;
+                        margin: 0;
+                        font-size: 1.1em;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
 }
