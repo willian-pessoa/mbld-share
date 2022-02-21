@@ -25,6 +25,14 @@ export default function AttemptPage() {
             "imageDimensions": image.asset->metadata.dimensions,
             video,
             title,
+            comments[]{
+              comment,
+              _key,
+              postedBy->{
+                _id,
+                userName,
+              },
+            }
           }`;
     client
       .fetch(query)
@@ -37,7 +45,7 @@ export default function AttemptPage() {
       .catch(console.error);
   }, [router.query]);
 
-  return <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "calc(100vh - 80px" }}>
+  return <div style={{ display: "flex", alignItems: "center", justifyContent: "center", position:"relative", top:"0px", width:"95vw" }}>
     {
       isLoading ? <Oval color="#00BFFF" height={40} width={40} /> :
         <AttemptDetails dataDetails={dataDetails} idPage={router.query.attemptId} />

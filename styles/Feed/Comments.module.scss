@@ -1,0 +1,111 @@
+.comments{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 900px;
+    background-color: $overlay900;
+    border: 2px solid $overlay800;
+    border-radius: 8px;
+    padding: 5px 2px;
+
+    .addContainer{
+        position: absolute;
+        max-width: 900px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $overlay300;
+        border: 3px solid $overlay800;
+        border-radius: 8px;
+        padding: 5px 2px;
+        bottom: 15px;
+        text-align: center;
+
+        .close{
+            position: absolute;
+            right: 5px;
+            cursor: pointer;
+            font-size: 1.3em;
+        }
+
+        p{
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        
+        textarea{
+            width: 90%;
+            resize: none;
+            margin: 5px 0;
+            font-size: 1.2em;
+            font-family: sans-serif;
+            border-radius: 5px;
+        }
+
+        button{
+            background-color: $overlay600;
+        }
+    }
+
+    h2{
+        margin: 5px 0;
+    }
+
+    ul{
+        width: 90%;
+        max-width: 900px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-color: $overlay800;
+        border: 2px solid $overlay600;
+        border-radius: 8px;
+        padding: 5px 2px;
+
+        li{
+            list-style: none;
+            padding: 10px 0;
+            border-bottom: 2px solid $overlay600;
+            width: 100%;
+            position: relative;
+
+            .deleteComment{
+                position: absolute;
+                right: 10px;
+                cursor: pointer;
+            }
+
+            h6{
+                margin: 0px 15px;
+                margin-bottom: 10px;
+                padding: 5px;
+                font-weight: 300;
+            }
+
+            p{
+                margin: 0px 5px;
+            }
+        }
+    }
+
+    button{
+        cursor: pointer;
+        padding: 5px 8px;
+        font-size: large;
+        width: 40%;
+        align-self: center;
+        border-radius: 10px;
+        border: none;
+        background-color: $overlay600;
+        color: white;
+    }
+
+    button:hover{
+        background: white;
+        color: $overlay900;
+    }
+}

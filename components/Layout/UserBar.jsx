@@ -71,7 +71,7 @@ export default function UserBar() {
         </Link>
       ) : (
         <Link href="/">
-          <li onClick={()=>logout()}>
+          <li style={{marginRight: "25px"}} onClick={()=>logout()}>
             <BiLogOut />
             &nbsp;Logout
           </li>

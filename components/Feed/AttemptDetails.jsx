@@ -7,6 +7,9 @@ import { useState, useEffect } from "react";
 // helpers
 import { timeToString } from "../../functions/timeToString";
 
+// components
+import Comments from "./Comments";
+
 const MAXDIMENSION = 350;
 
 export default function AttemptDetails({ idPage, dataDetails }) {
@@ -43,6 +46,7 @@ export default function AttemptDetails({ idPage, dataDetails }) {
             <Image priority src={dataDetails.imageUrl} layout="fill" />
           </div>
           <p>{dataDetails.note}</p>
+          <p>Video Link: {dataDetails.video === "" ? "Don't have" : dataDetails.video}</p>
         </div>
         <div className={styles.containerTop_right}>
           <h2>{dataDetails.title}</h2>
@@ -91,6 +95,9 @@ export default function AttemptDetails({ idPage, dataDetails }) {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.containerComments}>
+        <Comments comments={dataDetails.comments} idAttempt={dataDetails._id} />
       </div>
     </div>
   );
