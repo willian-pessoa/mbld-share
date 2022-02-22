@@ -34,22 +34,25 @@ export default function Feed() {
 
   const breakpointColumnsObj = {
     default: 3,
-    929: 2,
-    400: 1
+    1005: 2,
+    660: 1
   };
 
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className={styles.myMasonryGrid}
-      columnClassName={styles.myMasonryGrid_column}>
-      {
-        pins.map((pin, index) => {
-          return (
-            <Pin id={pin._id} key={index} imageDimensions={pin.imageDimensions} imageUrl={pin.imageUrl} result={`${pin.right_cubes}/${pin.number_cubes}`} pontuation={pin.pontuation} time={pin.time} />
-          )
-        })
-      }
-    </Masonry>
+    <div className={styles.feed}>
+      <h1>See the latest shared MBLD attempts:</h1>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className={styles.myMasonryGrid}
+        columnClassName={styles.myMasonryGrid_column}>
+        {
+          pins.map((pin, index) => {
+            return (
+              <Pin id={pin._id} key={index} imageDimensions={pin.imageDimensions} imageUrl={pin.imageUrl} result={`${pin.right_cubes}/${pin.number_cubes}`} pontuation={pin.pontuation} time={pin.time} />
+            )
+          })
+        }
+      </Masonry>
+    </div>
   )
 }

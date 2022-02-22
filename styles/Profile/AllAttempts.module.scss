@@ -3,6 +3,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: absolute;
+    top: 10px;
+    width: 100%;
 
     h5{
         margin: 5px;
@@ -50,5 +53,42 @@
                 }
             }
         }
+    }
+    
+    @include mobile{
+        .tableResponsive {
+            display: block;
+            position: relative;
+            font-size: 1.0em;
+          }
+          
+          .tableResponsive thead,
+          .tableResponsive tbody,
+          .tableResponsive th,
+          .tableResponsive td,
+          .tableResponsive tr {
+            display: block;
+          }
+
+          .tableResponsive td,
+          .tableResponsive th {
+            height: 30px;
+            padding: 5px !important;
+          }
+          
+          .tableResponsive thead {
+            float: left;
+          }
+
+          .tableResponsive tbody {
+            position: relative;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+          }
+
+          .tableResponsive tbody tr {
+            display: inline-block;
+          }
     }
 }

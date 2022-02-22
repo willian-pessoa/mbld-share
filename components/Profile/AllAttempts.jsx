@@ -323,7 +323,7 @@ export default function AllAttempts({ id }) {
         {isLoading ? (
           <Oval color="#00BFFF" height={40} width={40} />
         ) : (
-          <table className={styles.styledTable}>
+          <table className={`${styles.styledTable} ${styles.tableResponsive}`}>
             <thead>
               <tr>
                 {TITLES.map((item, index) => {

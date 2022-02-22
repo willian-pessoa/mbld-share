@@ -6,9 +6,21 @@
     background-color: $overlay900;
     padding: 10px;
     border-radius: 10px;
+    position: relative;
+    top: 0px;
+    margin: 10px 0;
+
+    @include mobile{
+        width: 330px;
+    }
 
     .topContainer{
         display: flex;
+
+        @include mobile{
+            flex-direction: column;
+            align-items: center;
+        }
 
         .leftTopContainer{
             display: flex;

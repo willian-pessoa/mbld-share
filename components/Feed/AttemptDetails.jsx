@@ -40,10 +40,9 @@ export default function AttemptDetails({ idPage, dataDetails }) {
       <div className={styles.containerTop}>
         <div className={styles.containerTop_left}>
           <div
-            style={{ height: `${height}px`, width: `${width}px` }}
             className={styles.image}
           >
-            <Image priority src={dataDetails.imageUrl} layout="fill" />
+            <Image priority src={dataDetails.imageUrl} height={height} width={width} />
           </div>
           <p>{dataDetails.note}</p>
           <p>Video Link: {dataDetails.video === "" ? "Don't have" : dataDetails.video}</p>

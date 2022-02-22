@@ -13,6 +13,11 @@
         align-items: center;
         justify-content: center;
         margin: 10px;
+
+        @include mobile{
+            width: 100%;
+        }
+
     }
 
     .containerTop{
@@ -25,6 +30,15 @@
         border: 2px solid $overlay800;
         border-radius: 8px;
         padding: 5px 2px;
+        
+        @include mobile{
+            flex-direction: column;
+
+            .containerTop_left,
+            .containerTop_right{
+                width: 100% !important;
+            }
+        }
 
         .containerTop_left{
             width: 55%;

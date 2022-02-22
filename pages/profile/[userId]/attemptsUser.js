@@ -23,7 +23,7 @@ export default function AttemptsUser() {
     }
   }, [])
 
-  return <div style={{ display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center", justifyContent: "center", height: "calc(100vh - 80px" }} >
+  return <div style={{ display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center", justifyContent: "center", position:"relative", width:"100vw"}} >
   {isLoading? <Oval color="#00BFFF" height={80} width={80} /> : !isLoged ?
     <><h1>You need be Logged to See Attempts</h1><button onClick={()=>Router.push("/login")} style={{ cursor: "pointer", borderRadius: "10px", padding: "20px", fontSize: "1.5em", fontWeight: "bold" }}>Login</button></> :
     <AllAttempts id={id} />

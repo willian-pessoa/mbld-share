@@ -186,7 +186,7 @@ export default function ShareMBLD({ id }) {
                 value={numberCubes}
                 id="amount"
                 type="number"
-                placeholder="2"
+                placeholder="0"
               />
             </label>
             <label>
@@ -196,7 +196,7 @@ export default function ShareMBLD({ id }) {
                 value={rightCubes}
                 id="right"
                 type="number"
-                placeholder="2"
+                placeholder="0"
               />
             </label>
             <label>
