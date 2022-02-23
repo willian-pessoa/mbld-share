@@ -16,7 +16,7 @@ export default function AttemptDetails({ idPage, dataDetails }) {
   const [height, setHeight] = useState(MAXDIMENSION);
   const [width, setWidth] = useState(MAXDIMENSION);
 
-  console.log(dataDetails);
+  //console.log(dataDetails);
 
   useEffect(() => {
     resizeImage(

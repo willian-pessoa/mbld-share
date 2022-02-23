@@ -26,7 +26,7 @@ export default function Feed() {
     client
       .fetch(query)
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         setPins(data);
       })
       .catch(console.error);

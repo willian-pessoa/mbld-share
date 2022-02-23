@@ -43,7 +43,7 @@ export default function UserBar() {
   return (
     <ul>
       <Link href="/">
-        <li>
+        <li style={{marginLeft:"10px"}}>
           <GoHome />
           &nbsp; Home
         </li>

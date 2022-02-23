@@ -16,7 +16,7 @@ const NAV = [
   },
   {
     name: "Ranking",
-    path: "/ranking/wcarules",
+    path: "/ranking",
   },
   {
     name: "Share",

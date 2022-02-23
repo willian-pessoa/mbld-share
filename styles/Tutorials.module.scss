@@ -1,0 +1,47 @@
+.tutorials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    position: relative;
+    top: 30px;
+
+    h1{
+        margin-bottom: 40px;
+    }
+
+    .tutorialsContainer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 800px;
+
+        @include mobile{
+            flex-direction: column;
+        }
+
+        .cardInfo{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            background-color: $overlay800;
+            border-radius: 8px;
+            border: 2px solid $overlay600;
+            box-shadow: 0 4px 8px 0 $overlay300, 0 6px 20px 0 $overlay600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 25px;
+
+            h4{
+                text-align: justify;
+                padding: 5px;
+                font-weight: 300;
+            }
+        }
+    }
+}
