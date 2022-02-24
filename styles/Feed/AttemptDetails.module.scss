@@ -44,7 +44,12 @@
             width: 55%;
             display: flex;
             flex-direction: column;
-            align-items: center;        
+            align-items: center; 
+            text-align: center;       
+
+            p{
+                margin: 5px;
+            }
 
             .image{
                 position: relative;

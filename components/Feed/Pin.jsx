@@ -6,7 +6,7 @@ import Router from "next/router"
 
 import {timeToString} from "../../functions/timeToString";
 
-export default function Pin({imageDimensions, imageUrl, result, pontuation, time, id}) {
+export default function Pin({author, imageDimensions, imageUrl, result, pontuation, time, id}) {
   const [height, setHeight] = useState(300);
   const [width] = useState(300);
 
@@ -20,8 +20,9 @@ export default function Pin({imageDimensions, imageUrl, result, pontuation, time
 
   return (
     <div style={{height:height, width:width}} className={styles.pin}>
+        <h4>{author}</h4>
         <h1>{result}</h1>
-        <h2>{pontuation}</h2>
+        <h2>{pontuation} Points</h2>
         <h3>{timeToString(time)}</h3>
         <Image onClick={()=>Router.push(`/attempts/${id}`)} priority src={imageUrl} width={width} height={height} as="image"/>
     </div>

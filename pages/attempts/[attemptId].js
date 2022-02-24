@@ -25,6 +25,7 @@ export default function AttemptPage() {
             "imageDimensions": image.asset->metadata.dimensions,
             video,
             title,
+            postedBy->{userName},
             comments[]{
               comment,
               _key,

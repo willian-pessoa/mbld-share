@@ -44,8 +44,9 @@ export default function AttemptDetails({ idPage, dataDetails }) {
           >
             <Image priority src={dataDetails.imageUrl} height={height} width={width} />
           </div>
-          <p>{dataDetails.note}</p>
-          <p>Video Link: {dataDetails.video === "" ? "Don't have" : dataDetails.video}</p>
+          <p>Posted By: {dataDetails.postedBy.userName}</p>
+          <p>Notes: {dataDetails.note}</p>
+          <p>Video: {dataDetails.video === "" ? "Don't have" : dataDetails.video}</p>
         </div>
         <div className={styles.containerTop_right}>
           <h2>{dataDetails.title}</h2>

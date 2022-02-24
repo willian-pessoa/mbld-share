@@ -48,7 +48,7 @@ export default function Feed() {
         {
           pins.map((pin, index) => {
             return (
-              <Pin id={pin._id} key={index} imageDimensions={pin.imageDimensions} imageUrl={pin.imageUrl} result={`${pin.right_cubes}/${pin.number_cubes}`} pontuation={pin.pontuation} time={pin.time} />
+              <Pin author={pin.author} id={pin._id} key={index} imageDimensions={pin.imageDimensions} imageUrl={pin.imageUrl} result={`${pin.right_cubes}/${pin.number_cubes}`} pontuation={pin.pontuation} time={pin.time} />
             )
           })
         }
