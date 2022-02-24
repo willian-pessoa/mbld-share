@@ -31,7 +31,7 @@ export default function Login() {
 
     return <div className={styles.login_container}>
         <div className={styles.videoContainer}>
-            <iframe src="https://www.youtube.com/embed/_oEU0l58HPY?controls=0&autoplay=1&mute=1&playlist=_oEU0l58HPY&loop=1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/_oEU0l58HPY?controls=0&autoplay=1&mute=1&playlist=_oEU0l58HPY&loop=1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
         <div className={styles.login_bg}>
             <div className={styles.login}>
