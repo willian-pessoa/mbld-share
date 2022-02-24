@@ -30,7 +30,9 @@ export default function Login() {
     }
 
     return <div className={styles.login_container}>
-        <video src="assets/mbld3.mp4" type="video/mp4" loop controls={false} autoPlay muted />
+        <div className={styles.videoContainer}>
+            <iframe src="https://www.youtube.com/embed/_oEU0l58HPY?controls=0&autoplay=1&mute=1&playlist=_oEU0l58HPY&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <div className={styles.login_bg}>
             <div className={styles.login}>
                 <Image priority src="/assets/logo.png" width="150" height="51" alt="logo" />
