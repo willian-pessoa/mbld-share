@@ -9,11 +9,11 @@ export default function Tutorials() {
       <div className={styles.tutorialsContainer}>
         <div onClick={()=>Router.push("/tutorials/howDoBLD")} className={styles.cardInfo}>
           <h2>How Do BLD</h2>
-          <h4>Learn how to solve rubik's cube blindfolded</h4>
+          <h4>Learn how to solve rubik&apos;s cube blindfolded</h4>
         </div>
         <div onClick={()=>Router.push("/tutorials/tipsMBLD")} className={styles.cardInfo}>
           <h2>Tips and Tricks</h2>
-          <h4>Learn the best tecnhiques to solve multiples rubik's cube blindfolded</h4>
+          <h4>Learn the best tecnhiques to solve multiples rubik&apos;s cube blindfolded</h4>
         </div>
         <div onClick={()=>Router.push("/tutorials/toolsMBLD")} className={styles.cardInfo}>
           <h2>Tools to Improve</h2>

@@ -41,7 +41,7 @@ export default function AllAttempts({ id }) {
         })
         .catch(console.error);
     }
-  }, []);
+  }, [id]);
 
   // build array to generate the lines of table
   useEffect(() => {
@@ -315,7 +315,7 @@ export default function AllAttempts({ id }) {
     <div className={styles.allAttempts}>
       <h2>All Attempts</h2>
       <h5>
-        If the attempt send/deleted doesn't show immediately, wait some minutes
+        If the attempt send/deleted doesn&apos;t show immediately, wait some minutes
         and refresh the page, sometimes it might take a while to load the
         updates from database.
       </h5>

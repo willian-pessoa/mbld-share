@@ -24,7 +24,7 @@ export default function Pin({author, imageDimensions, imageUrl, result, pontuati
         <h1>{result}</h1>
         <h2>{pontuation} Points</h2>
         <h3>{timeToString(time)}</h3>
-        <Image onClick={()=>Router.push(`/attempts/${id}`)} priority src={imageUrl} width={width} height={height} as="image"/>
+        <Image alt="attempt image" onClick={()=>Router.push(`/attempts/${id}`)} priority src={imageUrl} width={width} height={height} as="image"/>
     </div>
   )
 }

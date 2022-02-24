@@ -65,7 +65,7 @@ export default function Profile() {
     <div className={styles.profile}>
       {isLoading ? <Oval color="#00BFFF" height={80} width={80} /> :
         <><div className={styles.left}>
-          <Image src={image === null ? "/assets/defaultProfile.png" : image} width={125} height={125} />
+          <Image alt="profile" src={image === null ? "/assets/defaultProfile.png" : image} width={125} height={125} />
         </div><div className={styles.right}>
             <h2>{userName}</h2>
             <div className={styles.country}>

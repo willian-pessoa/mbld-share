@@ -23,7 +23,7 @@ export default function AttemptDetails({ idPage, dataDetails }) {
       dataDetails.imageDimensions.height,
       dataDetails.imageDimensions.width
     );
-  }, []);
+  }, [dataDetails.imageDimensions.height, dataDetails.imageDimensions.width]);
 
   const resizeImage = (h, w) => {
     if (h > w) {
@@ -42,7 +42,7 @@ export default function AttemptDetails({ idPage, dataDetails }) {
           <div
             className={styles.image}
           >
-            <Image priority src={dataDetails.imageUrl} height={height} width={width} />
+            <Image alt="attempt image" priority src={dataDetails.imageUrl} height={height} width={width} />
           </div>
           <p>Posted By: {dataDetails.postedBy.userName}</p>
           <p>Notes: {dataDetails.note}</p>

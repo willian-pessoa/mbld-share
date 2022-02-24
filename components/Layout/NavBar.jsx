@@ -34,7 +34,7 @@ export default function NavBar() {
         <ul>
         {NAV.map((item)=>{
           return (
-            <Link key={item.name} href={item.path}>
+            <Link key={item.name} href={item.path} passHref>
             <li key={item.name}>{item.name}</li>
             </Link>
             )

@@ -42,7 +42,7 @@ export default function UserBar() {
 
   return (
     <ul>
-      <Link href="/">
+      <Link href="/" passHref>
         <li style={{marginLeft:"10px"}}>
           <GoHome />
           &nbsp; Home
@@ -51,7 +51,7 @@ export default function UserBar() {
       {isLoged
         ? logedBar.map((item, index) => {
             return (
-              <Link key={index} href={item.path}>
+              <Link key={index} href={item.path} passHref>
                 <li key={index}>
                   {item.icon}&nbsp;{item.name}
                 </li>
@@ -63,14 +63,14 @@ export default function UserBar() {
         return <li key={index}>{item}</li>;
       })}
       {!isLoged ? (
-        <Link href="/login">
+        <Link href="/login" passHref>
           <li>
             <BiLogIn />
             &nbsp;Login
           </li>
         </Link>
       ) : (
-        <Link href="/">
+        <Link href="/" passHref>
           <li style={{marginRight: "25px"}} onClick={()=>logout()}>
             <BiLogOut />
             &nbsp;Logout
