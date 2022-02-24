@@ -304,21 +304,22 @@ export default function AllAttempts({ id }) {
   };
 
   const handlePageRedirect = (idPage, key) => {
-    if(key === "id_try"){
-      return
+    if (key === "id_try") {
+      return;
     } else {
-      Router.push(`/attempts/${idPage}`)
+      Router.push(`/attempts/${idPage}`);
     }
-  }
+  };
 
   return (
     <div className={styles.allAttempts}>
       <h2>All Attempts</h2>
       <h5>
         If the attempt send/deleted doesn't show immediately, wait some minutes
-        and refresh the page, sometimes it might take a while to load the updates from
-        database.
+        and refresh the page, sometimes it might take a while to load the
+        updates from database.
       </h5>
+      <h5>You can click on the title of each column to sort accord</h5>
       <div className={styles.table}>
         {isLoading ? (
           <Oval color="#00BFFF" height={40} width={40} />
@@ -347,14 +348,17 @@ export default function AllAttempts({ id }) {
             <tbody>
               {attempts.map((item, index) => {
                 return (
-                  <tr  key={index}>
+                  <tr key={index}>
                     {Object.keys(item).map((key, index) => {
                       return (
-                        <td key={index} onClick={()=>handlePageRedirect(item.id_try, key)}>
+                        <td
+                          key={index}
+                          onClick={() => handlePageRedirect(item.id_try, key)}
+                        >
                           {key === "id_try" ? (
                             <AiFillDelete
                               onClick={() => handleDelete(item[key])}
-                              style={{ cursor: "pointer", zIndex:"10"}}
+                              style={{ cursor: "pointer", zIndex: "10" }}
                             />
                           ) : (
                             item[key]
