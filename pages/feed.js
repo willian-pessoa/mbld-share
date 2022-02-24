@@ -40,7 +40,7 @@ export default function Feed() {
 
   return (
     <div className={styles.feed}>
-      <h1>See the latest shared MBLD attempts:</h1>
+      <h1>See the Latest Shared MBLD attempts:</h1>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className={styles.myMasonryGrid}
