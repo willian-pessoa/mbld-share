@@ -30,7 +30,7 @@ export default function Login() {
     }
 
     return <div className={styles.login_container}>
-        <video src="assets/mbld.mp4" type="video/mp4" loop controls={false} autoPlay muted />
+        <video src="assets/mbld2.mp4" type="video/mp4" loop controls={false} autoPlay muted />
         <div className={styles.login_bg}>
             <div className={styles.login}>
                 <Image priority src="/assets/logo.png" width="150" height="51" alt="logo" />
