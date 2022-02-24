@@ -35,7 +35,7 @@ export default function Login() {
             <div className={styles.login}>
                 <Image priority src="/assets/logo.png" width="150" height="51" alt="logo" />
                     <GoogleLogin
-                        clientId={`${process.env.REACT_APP_GOOGLE_ID}`}
+                        clientId={`${process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_ID}`}
                         render={renderProps => (
                             <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
                                 <FcGoogle style={{marginRight: "10px"}}/>

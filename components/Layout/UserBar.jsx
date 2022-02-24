@@ -64,7 +64,7 @@ export default function UserBar() {
       })}
       {!isLoged ? (
         <Link href="/login" passHref>
-          <li>
+          <li style={{marginRight: "25px"}}>
             <BiLogIn />
             &nbsp;Login
           </li>
