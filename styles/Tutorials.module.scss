@@ -45,3 +45,27 @@
         }
     }
 }
+
+.globalTutorials{
+    h2{
+        text-align: center;
+    }
+
+    a:visited {
+        color: $overlay300;
+        background-color: transparent;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: $overlay000;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+
+      a:link {
+        color: $overlay300;
+        background-color: transparent;
+        text-decoration: none;
+      }
+}

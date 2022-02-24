@@ -316,7 +316,7 @@ export default function AllAttempts({ id }) {
       <h2>All Attempts</h2>
       <h5>
         If the attempt send/deleted doesn't show immediately, wait some minutes
-        and refresh the page, sometimes it might take a while to load from
+        and refresh the page, sometimes it might take a while to load the updates from
         database.
       </h5>
       <div className={styles.table}>
