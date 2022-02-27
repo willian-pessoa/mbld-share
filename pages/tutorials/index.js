@@ -4,7 +4,7 @@ import Router from "next/router"
 
 export default function Tutorials() {
   return (
-    <><div className={styles.tutorials}>
+    <div className={styles.tutorials}>
       <h1>Tutorials</h1>
       <div className={styles.tutorialsContainer}>
         <div onClick={() => Router.push("/tutorials/howDoBLD")} className={styles.cardInfo}>
@@ -20,6 +20,7 @@ export default function Tutorials() {
           <h4>Tools to speed up your performance in blindfolded modality</h4>
         </div>
       </div>
-    </div><h6 id={styles.by}>by Willian Pessoa</h6></>
+      <h6 id={styles.by}>by Willian Pessoa</h6>
+    </div>
   )
 }
