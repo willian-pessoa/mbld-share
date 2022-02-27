@@ -4,4 +4,12 @@
     justify-content: center;
     height: calc(100vh - 80px);
     flex-direction: column;
+    position: relative;
+    top: 0;
+    text-align: center;
+
+    #by{
+        position: absolute;
+        bottom: 0;
+    }
 }

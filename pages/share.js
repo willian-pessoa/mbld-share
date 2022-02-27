@@ -5,7 +5,7 @@ import Router from 'next/router'
 
 //helpers
 import { client } from "../functions/client.js"
-import { Oval } from  'react-loader-spinner'
+import { Oval } from 'react-loader-spinner'
 
 
 export default function Share() {
@@ -16,21 +16,22 @@ export default function Share() {
   useEffect(() => {
     if (localStorage.getItem("user") === null) {
       setIsLoged(false);
-      setTimeout(()=>setIsLoading(false),500);
+      setTimeout(() => setIsLoading(false), 500);
     } else {
       setIsLoged(true);
       let id = JSON.parse(localStorage.getItem("user")).googleId;
       setId(id);
-      setTimeout(()=>setIsLoading(false),500);
+      setTimeout(() => setIsLoading(false), 500);
     }
   }, [])
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center", justifyContent: "center", position:"relative"}} >
-      {isLoading? <Oval color="#00BFFF" height={80} width={80} /> : !isLoged ?
-        <><h1>You need be Logged to Share Attempts</h1><button onClick={()=>Router.push("/login")} style={{ cursor: "pointer", borderRadius: "10px", padding: "20px", fontSize: "1.5em", fontWeight: "bold" }}>Login</button></> :
+    <div style={{ minHeight: "calc(100vh - 80px)", display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center", justifyContent: "center", position: "relative" }} >
+      {isLoading ? <Oval color="#00BFFF" height={80} width={80} /> : !isLoged ?
+        <><h1>You need be Logged to Share Attempts</h1><button onClick={() => Router.push("/login")} style={{ cursor: "pointer", borderRadius: "10px", padding: "20px", fontSize: "1.5em", fontWeight: "bold" }}>Login</button></> :
         <ShareMBLD id={id} />
       }
+      <h6 >by Willian Pessoa</h6>
     </div>
   )
 }

@@ -14,7 +14,8 @@ export default function Layout({ children }) {
   return (
     <>
       <NavBar />
-      <div className={styles.container_body}>{children}</div>
+      <div className={styles.container_body}>{children}
+      </div>
     </>
   );
 }
