@@ -15,7 +15,7 @@ export default function UserBar() {
   const [logedBar, setLogedBar] = useState([])
 
   useEffect(()=>{
-    if (localStorage.getItem("user") === null){
+    if (localStorage.getItem("user") === null || localStorage.getItem("user") === "undefined"){
         setIsLoged(false);
     } else {
         setIsLoged(true);
