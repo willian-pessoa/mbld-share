@@ -12,7 +12,7 @@ import Comments from "./Comments";
 
 const MAXDIMENSION = 350;
 
-export default function AttemptDetails({ idPage, dataDetails }) {
+export default function AttemptDetails({ idPage, dataDetails, setIsLoading, setRefresh }) {
   const [height, setHeight] = useState(MAXDIMENSION);
   const [width, setWidth] = useState(MAXDIMENSION);
 
@@ -23,7 +23,7 @@ export default function AttemptDetails({ idPage, dataDetails }) {
       dataDetails.imageDimensions.height,
       dataDetails.imageDimensions.width
     );
-  }, [dataDetails.imageDimensions.height, dataDetails.imageDimensions.width]);
+  }, []);
 
   const resizeImage = (h, w) => {
     if (h > w) {
@@ -97,7 +97,7 @@ export default function AttemptDetails({ idPage, dataDetails }) {
         </div>
       </div>
       <div className={styles.containerComments}>
-        <Comments comments={dataDetails.comments} idAttempt={dataDetails._id} />
+        <Comments setRefresh={setRefresh} setIsLoading={setIsLoading} comments={dataDetails.comments} idAttempt={dataDetails._id} />
       </div>
     </div>
   );

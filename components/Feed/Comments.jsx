@@ -8,7 +8,7 @@ import { Oval } from "react-loader-spinner";
 import { client } from "../../functions/client";
 const { nanoid } = require("nanoid");
 
-export default function Comments({ comments, idAttempt }) {
+export default function Comments({ comments, idAttempt, setIsLoading, setRefresh }) {
   const [text, setText] = useState("");
   const [isAddComment, setIsAddComment] = useState(false);
   const [isSent, setIsSent] = useState(false);
@@ -35,6 +35,10 @@ export default function Comments({ comments, idAttempt }) {
         .then((r) => {
           setIsSent(true);
           console.log(r);
+          setTimeout(()=>{
+            setIsLoading(true);
+            setRefresh(prev=>!prev)
+          },1500)
         })
         .catch((err) => {
           console.error("Oh no, the update failed: ", err.message);
@@ -52,6 +56,8 @@ export default function Comments({ comments, idAttempt }) {
       .then((r) => {
           console.log(r);
         console.log("Comment deleted");
+        setIsLoading(true);
+        setRefresh(prev=>!prev)
       })
       .catch((err) => {
         console.error("Delete failed: ", err.message);
@@ -102,22 +108,21 @@ export default function Comments({ comments, idAttempt }) {
           />
           <p>Write a Comment</p>
           {!isSent ? (
-            <textarea
+            <><textarea
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Write..."
               name="comment"
               id="comment"
               rows="4"
-            ></textarea>
+            ></textarea><button onClick={() => handleSend()}>
+              Send
+              </button></>
           ) : !isLoged ? (
             <h1>Need Be Loged to sent a Comment</h1>
           ) : (
             <h1>Comment Add Succesfuly, refresh the Page!</h1>
           )}
-          <button onClick={() => handleSend()}>
-            {isSent ? "Sent" : "Send"}
-          </button>
         </div>
       ) : (
         ""

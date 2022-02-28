@@ -59,6 +59,18 @@
                 font-size: large;
             }
         }
+
+        .homeBtn{
+                display: flex;
+                border-radius: 7px;
+                justify-content: space-around;
+                align-items: center;
+                padding: 5px;
+                background-color: white;
+                color: black;
+                cursor: pointer;
+                font-size: smaller;
+        }
     }
 }
 

@@ -10,6 +10,7 @@ export default function AttemptPage() {
   const router = useRouter();
   const [dataDetails, setDataDetails] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [refresh, setRefresh] = useState(false);
 
   //fecth data
   useEffect(() => {
@@ -40,16 +41,16 @@ export default function AttemptPage() {
       .then((data) => {
         setDataDetails(data[0]);
         if (data.length === 1) {
-          setTimeout(() => setIsLoading(false), 700)
+          setTimeout(() => setIsLoading(false), 1000)
         }
       })
       .catch(console.error);
-  }, [router.query]);
+  }, [router.query, refresh]);
 
   return <div style={{ display: "flex", alignItems: "center", justifyContent: "center", position:"relative", top:"0px", width:"95vw" }}>
     {
       isLoading ? <Oval color="#00BFFF" height={40} width={40} /> :
-        <AttemptDetails dataDetails={dataDetails} idPage={router.query.attemptId} />
+        <AttemptDetails setRefresh={setRefresh} setIsLoading={setIsLoading} dataDetails={dataDetails} idPage={router.query.attemptId} />
     }
   </div>;
 }

@@ -18,7 +18,7 @@ export default function RankingMBLD({ ranking }) {
         })
         setSortedRank(tempArr.sort((b, a) => parseInt(a.highPontuation.pontuation) - parseInt(b.highPontuation.pontuation)))
         setTimeout(() => setIsLoading(false), 500);
-    }, [sortedRank])
+    }, [])
 
     return (
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", width: "100vw" }}>

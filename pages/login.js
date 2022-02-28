@@ -10,23 +10,30 @@ import { client } from "../functions/client.js"
 export default function Login() {
 
     const responseGoogle = (response) => {
-        //console.log(response)
-        localStorage.setItem("user", JSON.stringify(response.profileObj));
 
-        const { name, googleId, imageUrl } = response.profileObj;
-
-        const doc = {
-            _id: googleId,
-            _type: "user",
-            userName: name,
-            image: imageUrl,
-            country: "",
-        }
-
-        client.createIfNotExists(doc)
+        if (response.error){
+            localStorage.removeItem("user");
+            console.log(response)
+            window.alert("Error when logging in")
+            Router.push("/")
+        } else {
+            localStorage.setItem("user", JSON.stringify(response.profileObj));
+            
+            const { name, googleId, imageUrl } = response.profileObj;
+            
+            const doc = {
+                _id: googleId,
+                _type: "user",
+                userName: name,
+                image: imageUrl,
+                country: "",
+            }
+            
+            client.createIfNotExists(doc)
             .then(() => {
                 Router.push("/")
             })
+        }
     }
 
     return <div className={styles.login_container}>
@@ -49,6 +56,7 @@ export default function Login() {
                     cookiePolicy={'single_host_origin'}
                 />
             </div>
+            <button className={styles.homeBtn} onClick={()=>Router.push("/")}>Home</button>
         </div>
     </div>;
 }
