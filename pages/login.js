@@ -15,7 +15,6 @@ export default function Login() {
             localStorage.removeItem("user");
             console.log(response)
             window.alert("Error when logging in")
-            Router.push("/")
         } else {
             localStorage.setItem("user", JSON.stringify(response.profileObj));
             

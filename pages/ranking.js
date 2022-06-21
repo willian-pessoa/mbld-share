@@ -10,6 +10,7 @@ export default function RankingMBLD({ ranking }) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        console.log("render");
         let tempArr = []
         sortedRank.forEach((item) => {
             if (item.highPontuation != null) {
